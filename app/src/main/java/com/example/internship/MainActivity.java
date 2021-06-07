@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.internship.Entity.RoomModel;
 import com.example.internship.Models.LangModel;
@@ -35,11 +36,13 @@ public class MainActivity extends AppCompatActivity {
         recyclerView= findViewById(R.id.rv);
         del=(Button)findViewById(R.id.del);
 
+        Toast.makeText(this, "Wait for 5 sec to display", Toast.LENGTH_SHORT).show();
+
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DatabaseClass.getDatabase(getApplicationContext()).getDao().delete();
-                recyclerView.setAdapter(new AdapterClass(DatabaseClass.getDatabase(getApplicationContext()).getDao().getAllData()));
+                recyclerView.setAdapter(new AdapterClass(DatabaseClass.getDatabase(getApplicationContext()).getDao().getAllData(),MainActivity.this));
             }
         });
 
@@ -62,20 +65,23 @@ public class MainActivity extends AppCompatActivity {
                         roomModel.setSubregion(response.body().get(i).getSubregion());
                         roomModel.setPopulation(response.body().get(i).getPopulation());
                         roomModel.setLanguages(response.body().get(i).getLanguages().get(0).getName());
-//                        roomModel.setBorders(response.body().get(i).getBorders());
+                        roomModel.setBorders(response.body().get(i).getBorders());
                         roomModel.setFlag(response.body().get(i).getFlag());
                         Log.e(TAG, response.body().get(i).getFlag());
                         DatabaseClass.getDatabase(getApplicationContext()).getDao().insertAllData(roomModel);
                     }
 
                 }
-                recyclerView.setAdapter(new AdapterClass(DatabaseClass.getDatabase(getApplicationContext()).getDao().getAllData()));
+                recyclerView.setAdapter(new AdapterClass(DatabaseClass.getDatabase(getApplicationContext()).getDao().getAllData(),MainActivity.this));
 
             }
 
             @Override
             public void onFailure(Call<List<Model1>> call, Throwable t) {
                 Log.e(TAG, "onFailure: "+ t.getMessage() );
+                recyclerView.setAdapter(new AdapterClass(DatabaseClass.getDatabase(getApplicationContext()).getDao().getAllData(),MainActivity.this
+                ));
+
             }
         });
 

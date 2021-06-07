@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "b51e1ec3c76127bb4ac9360bb292ff53",
+    "identityHash": "9c352e4e0ce16b458606af85426d766c",
     "entities": [
       {
         "tableName": "region",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`key` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `capital` TEXT, `flag` TEXT, `region` TEXT, `subregion` TEXT, `population` TEXT, `languages` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`key` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `capital` TEXT, `flag` TEXT, `region` TEXT, `subregion` TEXT, `population` TEXT, `languages` TEXT, `borders` TEXT)",
         "fields": [
           {
             "fieldPath": "key",
@@ -55,6 +55,12 @@
             "columnName": "languages",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "borders",
+            "columnName": "borders",
+            "affinity": "TEXT",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -70,7 +76,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b51e1ec3c76127bb4ac9360bb292ff53')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9c352e4e0ce16b458606af85426d766c')"
     ]
   }
 }

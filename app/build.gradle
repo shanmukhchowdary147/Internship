@@ -48,4 +48,8 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation "androidx.room:room-runtime:2.3.0"
     annotationProcessor "androidx.room:room-compiler:2.3.0"
+    implementation 'com.github.ar-android:AndroidSvgLoader:1.0.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.pixplicity.sharp:library:1.1.0'
+
 }

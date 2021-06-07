@@ -72,14 +72,38 @@
             android:text="Population"
             android:textColor="#090909"
             android:textSize="18dp" />
+        <TextView
+            android:id="@+id/borders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/population"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/belgrano"
+            android:text="Borders"
+            android:textColor="#090909"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/languages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/borders"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/belgrano"
+            android:text="Languages"
+            android:textColor="#090909"
+            android:textSize="18dp" />
 
 
         <ImageView
             android:id="@+id/flag1"
             android:layout_width="match_parent"
             android:layout_height="215dp"
-            android:layout_below="@id/population"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:src="@color/purple_200"
+             />
 
     </LinearLayout>
 

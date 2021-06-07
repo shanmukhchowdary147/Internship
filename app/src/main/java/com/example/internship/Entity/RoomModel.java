@@ -34,6 +34,17 @@ public class RoomModel {
     @ColumnInfo(name="languages")
     private String languages;
 
+    @ColumnInfo(name="borders")
+    private ArrayList<String> borders;
+
+    public ArrayList<String> getBorders() {
+        return borders;
+    }
+
+    public void setBorders(ArrayList<String> borders) {
+        this.borders = borders;
+    }
+
     public String getLanguages() {
         return languages;
     }
