@@ -55,6 +55,7 @@ public class AdapterClass extends RecyclerView.Adapter<com.example.internship.Ad
         myViewHolder.subregion.setText("Sub-Region:- " + list.get(i).getSubregion());
         myViewHolder.population.setText("Population:- " + list.get(i).getLanguages());
         myViewHolder.languages.setText("Language:- " + list.get(i).getLanguages());
+        myViewHolder.borders.setText("Borders:- " + list.get(i).getBorders());
 
         Utils.fetchSvg(context, list.get(i).getFlag(), myViewHolder.flagy);
 
